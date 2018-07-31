@@ -67,7 +67,8 @@
 
     <?php
     $api_key = htmlentities($_POST['api-key']);
-    $warehouse_id = htmlentities($_POST['warehouse_id']);
+    $channel_id = htmlentities($_POST['channel_id']);
+    $since_id = htmlentities($_POST['since_id']);
     $page_size = htmlentities($_POST['page_size']);
     $page = htmlentities($_POST['page']);
     ?>
