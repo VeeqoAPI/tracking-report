@@ -1,0 +1,7 @@
+{
+  "name": "veeqo/tracking-report",
+  "description": "",
+  "require": {
+    "curl/curl": "^1.5"
+  }
+}

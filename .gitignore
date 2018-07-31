@@ -19,6 +19,8 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/warehouse-stock.iml
+.idea/**/warehouse-stock.iml
 
 # Sensitive or high-churn files
 .idea/**/dataSources/
@@ -70,3 +72,23 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+# ignore IDE/hidden/OS cache files
+.*
+*~
+nbproject
+nb-configuration.xml
+Session.vim
+*.tmproj
+*.tmproject
+tmtags
+Thumbs.db
+Desktop.ini
+
+# ignore Composer downloads
+/vendor/*
+
+# keep some hiddens
+!.htaccess
+!/.gitignore
+!/.travis.yml
