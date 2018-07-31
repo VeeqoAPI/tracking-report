@@ -187,13 +187,13 @@
         <table class="table table-hover table-sm">
             <thead>
                 <tr>
-                    <th scope="col">Number</th>
+                    <th scope="col"><strong>Number</strong><br /></th>
                     <th scope="col"><strong>Deliver to:<br /></strong> First Name</th>
                     <th scope="col">Surname</th>
                     <th scope="col">Country</th>
-                    <th scope="col">Allocation ID</th>
+                    <th scope="col"><strong>Allocation ID</strong><br /></th>
 <!--                    <th scope="col">First Product Title</th>-->
-                    <th scope="col">Delivery Method</th>
+                    <th scope="col"><strong>Shipment Details:</strong><br />Delivery Method</th>
                     <th scope="col">Carrier</th>
                     <th scope="col">Tracking Number</th>
                     <th scope="col">Shipped At Date</th>
