@@ -1,4 +1,4 @@
-<?php extract(require('fetch-products.php')); ?>
+<?php extract(require('fetch-shipped-orders.php')); ?>
 <!--/**
  * Created by PhpStorm.
  * User: philr
@@ -73,7 +73,7 @@
     $page = htmlentities($_POST['page']);
     ?>
 
-        <form id="fetch_warehouse_stock" action="index.php" method="post">
+        <form id="fetch_shipped_orders" action="index.php" method="post">
 
             <?php if(!isset($_POST['api-key']) || ($error)): ?>
                 <div class="row justify-content-center">
