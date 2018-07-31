@@ -188,11 +188,11 @@
             <thead>
                 <tr>
                     <th scope="col">Number</th>
-                    <th scope="col">Deliver to First Name</th>
-                    <th scope="col">Deliver to Surname</th>
-                    <th scope="col">Destination Country</th>
-                    <th scope="col">Allocation Number</th>
-                    <th scope="col">First Product Title</th>
+                    <th scope="col">Deliver to: First Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Allocation ID</th>
+<!--                    <th scope="col">First Product Title</th>-->
                     <th scope="col">Delivery Method</th>
                     <th scope="col">Carrier</th>
                     <th scope="col">Tracking Number</th>
@@ -207,9 +207,9 @@
                         <th><?= $order['deliver_to']['last_name'] ?></th>
                         <th><?= $order['deliver_to']['country'] ?></th>
                         <th><?= $allocation['id'] ?></th>
-                        <?php foreach ($allocation['line_items'] as $line_item): ?>
-                            <th><?= $line_item['0']['sellable']['full_title'] ?></th>
-                        <?php endforeach; ?>
+<!--                        --><?php //foreach ($allocation['line_items'] as $line_item): ?>
+<!--                            <th>--><?//= $line_item['0']['sellable']['full_title'] ?><!--</th>-->
+<!--                        --><?php //endforeach; ?>
                         <th><?= $order['delivery_method']['name'] ?></th>
                         <th><?= $allocation['shipment']['carrier']['name'] ?></th>
                         <th><?= $allocation['shipment']['tracking_number']['tracking_number'] ?></th>
