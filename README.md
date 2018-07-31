@@ -1,10 +1,10 @@
-# Veeqo API Dashboard
+# Veeqo API Tracking Report
 
-This example shows how to access the Veeqo API dashboard.
+This example shows a basic Tracking Report
 
 If you want to see it in action visit:
 
-https://veeqo-dashboard.herokuapp.com
+https://veeqo-tracking-report.herokuapp.com/
 
 ## Requirements
  
