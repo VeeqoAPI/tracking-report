@@ -68,7 +68,7 @@
     <?php
     $api_key = htmlentities($_POST['api-key']);
     $channel_id = htmlentities($_POST['channel_id']);
-    $since_id = htmlentities($_POST['since_id']);
+//    $since_id = htmlentities($_POST['since_id']);
     $page_size = htmlentities($_POST['page_size']);
     $page = htmlentities($_POST['page']);
     ?>
@@ -100,33 +100,33 @@
                 </div><!-- /.row -->
             <?php endif; ?>
 
-            <?php if(!isset($_POST['warehouse_id']) || ($error)): ?>
+            <?php if(!isset($_POST['channel_id']) || ($error)): ?>
                 <div class="row justify-content-center">
                     <div class="col-md-6 text-center">
-                            <h2>Enter Warehouse ID:</h2>
+                            <h2>Enter Channel ID:</h2>
                             <input class="form-control input-sm"
                                    type="text"
-                                   name="warehouse_id"
+                                   name="channel_id"
                                    value="">
                         <div class="blue-line"></div>
                     </div>
                 </div><!-- /.row -->
             <?php endif; ?>
 
-            <?php if(isset($_POST['warehouse_id']) && (!$error)): ?>
+            <?php if(isset($_POST['channel_id']) && (!$error)): ?>
                 <div class="row justify-content-center">
                     <div class="col-md-6 text-center">
-                        <h2>Warehouse Name: </h2>
-                        <h3><?php echo $warehouse['name'] ?></h3>
+                        <h2>Channel Name: </h2>
+                        <h3><?php echo $channel['name'] ?></h3>
                         <div class="blue-line"></div>
                     </div>
 
                 </div><!-- /.row -->
             <?php endif; ?>
 
-            <?php if(!isset($_POST['warehouse_id']) || !isset($_POST['api-key']) || ($error)): ?>
+            <?php if(!isset($_POST['channel_id']) || !isset($_POST['api-key']) || ($error)): ?>
                 <div class="text-center">
-                    <label for="page_size">Products per Page: </label>
+                    <label for="page_size">Orders per Page: </label>
                     <select id="page_size" name="page_size">
                         <option value="10">10</option>
                         <option value="25">25</option>
@@ -139,10 +139,10 @@
                 </div>
             <?php endif; ?>
 
-            <?php if(isset($_POST['warehouse_id']) && isset($_POST['api-key']) && (!$error)): ?>
+            <?php if(isset($_POST['channel_id']) && isset($_POST['api-key']) && (!$error)): ?>
                 <div class="text-center form-group">
                     <div>
-                        <label for="page_size">Products per Page: </label>
+                        <label for="page_size">Orders per Page: </label>
                         <select id="page_size" name="page_size" type="submit">
                             <option value="10" <?php if (isset($page_size) && $page_size==10) echo("selected");?>>10</option>
                             <option value="25" <?php if (isset($page_size) && $page_size==25) echo("selected");?>>25</option>
@@ -151,7 +151,7 @@
                         </select>
                     </div>
                     <input type="hidden"  name="api-key" value="<?php echo $api_key ?>">
-                    <input type="hidden"  name="warehouse_id" value="<?php echo $warehouse_id ?>">
+                    <input type="hidden"  name="channel_id" value="<?php echo $channel_id ?>">
 <!--                    <input class="btn btn-danger" type="submit" value="Clear Values" />-->
                     <input class="btn btn-success" type="submit" value="Refresh" />
                     <input class="btn btn-danger" type="button" value="Clear Values" onclick="window.location.href='https://veeqo-warehouse-stock.herokuapp.com/index.php'" />
