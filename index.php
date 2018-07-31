@@ -154,7 +154,7 @@
                     <input type="hidden"  name="channel_id" value="<?php echo $channel_id ?>">
 <!--                    <input class="btn btn-danger" type="submit" value="Clear Values" />-->
                     <input class="btn btn-success" type="submit" value="Refresh" />
-                    <input class="btn btn-danger" type="button" value="Clear Values" onclick="window.location.href='https://veeqo-warehouse-stock.herokuapp.com/index.php'" />
+                    <input class="btn btn-danger" type="button" value="Clear Values" onclick="window.location.href='https://veeqo-tracking-report.herokuapp.com/index.php'" />
 
                 <?php if($headers_arr['X-Total-Count']>$page_size): ?>
                     <?php $page_count = ceil($headers_arr['X-Total-Count']/$page_size) ?>
