@@ -188,7 +188,7 @@
             <thead>
                 <tr>
                     <th scope="col">Number</th>
-                    <th scope="col"><strong>Deliver to:</strong> First Name</th>
+                    <th scope="col"><strong>Deliver to:<br /></strong> First Name</th>
                     <th scope="col">Surname</th>
                     <th scope="col">Country</th>
                     <th scope="col">Allocation ID</th>
