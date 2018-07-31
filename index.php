@@ -187,28 +187,32 @@
         <table class="table table-hover table-sm">
             <thead>
                 <tr>
-                    <th scope="col">Product Title</th>
-                    <th scope="col">Sellable Title</th>
-                    <th scope="col">Total Quantity Sold</th>
-                    <th scope="col">Physical Stock Level</th>
-                    <th scope="col">Allocated Stock Level</th>
-                    <th scope="col">Available Stock Level</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Deliver to First Name</th>
+                    <th scope="col">Deliver to Surname</th>
+                    <th scope="col">Destination Country</th>
+                    <th scope="col">Allocation Number</th>
+                    <th scope="col">First Product Title</th>
+                    <th scope="col">Delivery Method</th>
+                    <th scope="col">Carrier</th>
+                    <th scope="col">Tracking Number</th>
                 </tr>
             </thead>
             <tbody>
-            <?php foreach ($products as $product): ?>
-                <?php foreach ($product['sellables'] as $sellable): ?>
+            <?php foreach ($orders as $order): ?>
+                <?php foreach ($order['allocations'] as $allocation): ?>
                     <tr>
-                        <th><?= $sellable['product_title'] ?></th>
-                        <th><?= $sellable['sellable_title'] ?></th>
-                        <th><?= $sellable['total_quantity_sold'] ?></th>
-                        <?php foreach ($sellable['stock_entries'] as $stock_entry): ?>
-                            <?php if ($stock_entry['warehouse_id'] == $warehouse_id): ?>
-                                <th><?= $stock_entry['physical_stock_level'] ?></th>
-                                <th><?= $stock_entry['allocated_stock_level'] ?></th>
-                                <th><?= $stock_entry['available_stock_level'] ?></th>
-                            <?php endif; ?>
+                        <th><?= $order['number'] ?></th>
+                        <th><?= $order['deliver_to']['first_name'] ?></th>
+                        <th><?= $order['deliver_to']['last_name'] ?></th>
+                        <th><?= $order['deliver_to']['country'] ?></th>
+                        <th><?= $allocation['id'] ?></th>
+                        <?php foreach ($allocation['line_items'] as $line_item): ?>
+                            <th><?= $line_item['0']['sellable']['full_title'] ?></th>
                         <?php endforeach; ?>
+                        <th><?= $order['delivery_method']['name'] ?></th>
+                        <th><?= $allocation['shipment']['carrier']['name'] ?></th>
+                        <th><?= $allocation['shipment']['tracking_number']['tracking_number'] ?></th>
                     </tr>
                 <?php endforeach; ?>
             <?php endforeach; ?>
@@ -216,25 +220,6 @@
         </table>
 
         <div class="blue-line"></div>
-        <?php foreach (array_chunk($products, 4) as $group): ?>
-            <row class="card-deck">
-                <?php foreach ($group as $product): ?>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="card">
-                            <img class="card-img-top" src="<?= isset($product['image']) ? $product['image'] : 'http://placehold.it/800x500' ?>" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title"><?= $product['title'] ?></h5>
-<!--                                <p>--><?//= $product['description'] ?><!--</p>-->
-                                <p>Total Available Stock: <?= $product['total_available_stock_level'] ?></p>
-                                <p>Total Allocated Stock: <?= $product['total_allocated_stock_level'] ?></p>
-                                <p><strong>NOTE: Stock values are from all warehouses.</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </row>
-            <!-- /.row -->
-        <?php endforeach; ?>
     <?php endif; ?>
 
     <hr>
