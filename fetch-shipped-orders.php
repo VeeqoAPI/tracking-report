@@ -22,7 +22,7 @@ function http_parse_headers($header) {
     $fields = explode("\r\n", preg_replace('/\x0D\x0A[\x09\x20]+/', ' ', $header));
     foreach( $fields as $field ) {
         if( preg_match('/([^:]+): (.+)/m', $field, $match) ) {
-            $match[1] = preg_replace('/(?<=^|[\x09\x20\x2D])./e', 'strtoupper("\0")', strtolower(trim($match[1])));
+            $match[1] = preg_replace_callback('/(?<=^|[\x09\x20\x2D])./e', 'strtoupper("\0")', strtolower(trim($match[1])));
             if( isset($retVal[$match[1]]) ) {
                 $retVal[$match[1]] = array($retVal[$match[1]], $match[2]);
             } else {
@@ -33,7 +33,7 @@ function http_parse_headers($header) {
     return $retVal;
 }
 
-// CURL Request for Warehouse name
+// CURL Request for Channel Name
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://api.veeqo.com/channels/$channel_id");
@@ -79,8 +79,8 @@ $response = json_decode($response, true);
 $body = json_decode($body,true);
 $headers_arr = http_parse_headers($headers);
 
-//echo ("\n\nBody[0][title]: ".$body[0]['title']);
-//echo ("\n\nBody: ".$body);
+echo ("\n\nHeaders: ".$headers);
+echo ("\n\nheaders_arr: ".$headers_arr['9']);
 //echo ("\n\nBody[0][sellables][0][product_title]: ".$body[0]['sellables'][0]['product_title']);
 //echo ("\n\nBody[0][sellables][0][stock_entries][0][warehouse_id]: ".$body[0]['sellables'][0]['stock_entries'][0]['warehouse_id']);
 echo ("\n\nX-Total-Count: ".$headers_arr['X-Total-Count']);
