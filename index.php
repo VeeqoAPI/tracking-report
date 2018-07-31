@@ -196,6 +196,7 @@
                     <th scope="col">Delivery Method</th>
                     <th scope="col">Carrier</th>
                     <th scope="col">Tracking Number</th>
+                    <th scope="col">Shipped At Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -213,6 +214,7 @@
                         <th><?= $order['delivery_method']['name'] ?></th>
                         <th><?= $allocation['shipment']['carrier']['name'] ?></th>
                         <th><?= $allocation['shipment']['tracking_number']['tracking_number'] ?></th>
+                        <th><?= $order['shipped_at'] ?></th>
                     </tr>
                 <?php endforeach; ?>
             <?php endforeach; ?>
