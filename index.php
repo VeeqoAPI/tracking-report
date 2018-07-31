@@ -214,7 +214,7 @@
                         <th><?= $order['delivery_method']['name'] ?></th>
                         <th><?= $allocation['shipment']['carrier']['name'] ?></th>
                         <th><?= $allocation['shipment']['tracking_number']['tracking_number'] ?></th>
-                        <th><?= $order['shipped_at'] ?></th>
+                        <th><?= $date = date('d-m-Y', strtotime($order['shipped_at'])) ?></th>
                     </tr>
                 <?php endforeach; ?>
             <?php endforeach; ?>
