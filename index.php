@@ -15,7 +15,7 @@
     <meta name="description" content="Veeqo - API Dashboard">
     <meta name="author" content="Phil Reynolds">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Veeqo-Warehouse-Stock</title>
+    <title>Veeqo-Tracking-Report</title>
 
     <!-- Bootstrap Core CSS -->
     <!-- Latest compiled and minified CSS -->
@@ -43,7 +43,7 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Veeqo Warehouse Stock</a>
+            <a class="navbar-brand" href="#">Veeqo Tracking Report</a>
         </div>
 
     </div>
@@ -231,7 +231,7 @@
                 <p>API request took <?= $time ?>s, response
                     size <?= $responseSize ?> bytes</p>
                 <p>API Reponse Code: <?= $responseCode ?></p>
-                <p>Total Products: <?= $headers_arr['X-Total-Count'] ?></p>
+                <p>Total Shipped Channel Orders: <?= $headers_arr['X-Total-Count'] ?></p>
                 <p> &copy; Veeqo 2018 Ltd</p>
             </div>
         </div>
