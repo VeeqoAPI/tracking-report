@@ -135,7 +135,7 @@
                     </select>
                 </div>
                 <div class="text-center">
-                    <input class="btn btn-primary veeqo-background" type="submit" value="Get Products" />
+                    <input class="btn btn-primary veeqo-background" type="submit" value="Get Orders" />
                 </div>
             <?php endif; ?>
 

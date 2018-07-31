@@ -3,18 +3,18 @@
 
 $api_key = htmlentities($_POST['api-key']);
 $channel_id = htmlentities($_POST['channel_id']);
-$since_id = htmlentities($_POST['since_id']);
+//$since_id = htmlentities($_POST['since_id']);
 $page_size = htmlentities($_POST['page_size']);
 $page = htmlentities($_POST['page']);
 
-function prepare_products($response) {
-    $products = $response;
+function prepare_orders($response) {
+    $orders = $response;
 //    foreach ($products as $index => $product) {
 //        $products[$index] = array_merge([
 //            'infoUrl' => '#'
 //        ], $product);
 //    }
-    return $products;
+    return $orders;
 }
 
 function http_parse_headers($header) {
@@ -36,7 +36,7 @@ function http_parse_headers($header) {
 // CURL Request for Warehouse name
 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://api.veeqo.com/warehouses/$warehouse_id");
+curl_setopt($ch, CURLOPT_URL, "https://api.veeqo.com/channels/$channel_id");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 curl_setopt($ch, CURLOPT_HEADER, FALSE);
 
@@ -44,16 +44,16 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Content-Type: application/json",
     "x-api-key: $api_key"
 ));
-$warehouseResponse = curl_exec($ch);
+$channelResponse = curl_exec($ch);
 
 curl_close($ch);
 
 
-// CURL Request for products
+// CURL Request for orders
 
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, "https://api.veeqo.com/products?warehouse_id=".$warehouse_id."&page_size=".$page_size."&page=".$page);
+curl_setopt($ch, CURLOPT_URL, "https://api.veeqo.com/orders?channel_ids=".$channel_id."&status=shipped&page_size=".$page_size."&page=".$page);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 curl_setopt($ch, CURLOPT_HEADER, TRUE);
 
@@ -74,7 +74,7 @@ $err = curl_error($ch);
 
 curl_close($ch);
 
-$warehouse = json_decode($warehouseResponse, true);
+$channel = json_decode($channelResponse, true);
 $response = json_decode($response, true);
 $body = json_decode($body,true);
 $headers_arr = http_parse_headers($headers);
@@ -86,7 +86,7 @@ $headers_arr = http_parse_headers($headers);
 //echo ("\n\nX-Total-Count: ".$headers_arr['X-Total-Count']);
 
 $results = [
-    'products' => [],
+    'orders' => [],
     'error' => false,
     'time' => $time,
     'responseSize' => $responseSize,
@@ -99,16 +99,16 @@ $results = [
 // Error Handling
 // TODO refactor this mess
 
-if ($warehouse_id == null){
+if ($channel_id == null){
     if ($responseCode == '200'){
         $results = [
-            'error' => "No Warehouse ID",
-            'products' => []
+            'error' => "No Channel ID",
+            'orders' => []
         ];
     } else {
         $results = [
             'error' => "API error: " .$responseCode." ". $body['error_messages'],
-            'products' => []
+            'orders' => []
         ];
     }
 } elseif ($err) {
@@ -118,7 +118,7 @@ if ($warehouse_id == null){
 } elseif($responseCode != '200'){
     $results['error'] = "API error: " .$responseCode." ". $body['error_messages'];
 } else {
-    $results['products'] = prepare_products($body);
+    $results['orders'] = prepare_orders($body);
 }
 
 return $results;
