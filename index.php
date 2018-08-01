@@ -188,6 +188,7 @@
             <thead>
                 <tr>
                     <th scope="col"><strong>Number</strong><br /></th>
+                    <th scope="col">Created At Date</th>
                     <th scope="col"><strong>Deliver to:<br /></strong> First Name</th>
                     <th scope="col">Surname</th>
                     <th scope="col">Country</th>
@@ -204,6 +205,7 @@
                 <?php foreach ($order['allocations'] as $allocation): ?>
                     <tr>
                         <th><?= $order['number'] ?></th>
+                        <th><?= $date = date('d-m-Y', strtotime($order['created_at'])) ?></th>
                         <th><?= $order['deliver_to']['first_name'] ?></th>
                         <th><?= $order['deliver_to']['last_name'] ?></th>
                         <th><?= $order['deliver_to']['country'] ?></th>
