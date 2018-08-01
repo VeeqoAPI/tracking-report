@@ -194,7 +194,10 @@
                     <th scope="col">Post Code</th>
                     <th scope="col">Country</th>
                     <th scope="col"><strong>Allocation ID</strong><br /> </th>
-<!--                    <th scope="col">First Product Title</th>-->
+                    <th scope="col"><strong>First Product: </strong><br/> Title</th>
+                    <th scope="col">SKU</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Item Price</th>
                     <th scope="col"><strong>Shipment Details:</strong><br />Delivery Method</th>
                     <th scope="col">Carrier</th>
                     <th scope="col">Tracking Number</th>
@@ -212,9 +215,10 @@
                         <th><?= $order['deliver_to']['zip'] ?></th>
                         <th><?= $order['deliver_to']['country'] ?></th>
                         <th><?= $allocation['id'] ?></th>
-<!--                        --><?php //foreach ($allocation['line_items'] as $line_item): ?>
-<!--                            <th>--><?//= $line_item['0']['sellable']['full_title'] ?><!--</th>-->
-<!--                        --><?php //endforeach; ?>
+                        <th><?= $allocation['line_items'][0]['sellable']['full_title'] ?></th>
+                        <th><?= $allocation['line_items'][0]['sellable']['sku_code'] ?></th>
+                        <th><?= $allocation['line_items'][0]['quantity'] ?></th>
+                        <th><?= $allocation['line_items'][0]['sellable']['price'] ?></th>
                         <th><?= $order['delivery_method']['name'] ?></th>
                         <th><?= $allocation['shipment']['carrier']['name'] ?></th>
                         <th><?= $allocation['shipment']['tracking_number']['tracking_number'] ?></th>
