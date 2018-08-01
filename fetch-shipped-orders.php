@@ -86,6 +86,13 @@ $headers_arr = http_parse_headers($headers);
 //echo ("\n\nBody[0][sellables][0][stock_entries][0][warehouse_id]: ".$body[0]['sellables'][0]['stock_entries'][0]['warehouse_id']);
 //echo ("\n\nX-Total-Count: ".$headers_arr['X-Total-Count']);
 
+//php if ($allocation['shipment']['tracking_number']['tracking_number']){
+//                                $allocation['shipment']['tracking_number']['tracking_number'];}
+//                            elseif ($allocation['shipment']['tracking_number']['delivery_confirmation_number']){
+//                                $allocation['shipment']['tracking_number']['delivery_confirmation_number'];}
+//                            else { echo ("No Value");}
+
+
 $results = [
     'orders' => [],
     'error' => false,
