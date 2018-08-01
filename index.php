@@ -191,6 +191,7 @@
                     <th scope="col">Created At Date</th>
                     <th scope="col"><strong>Deliver to:</strong><br />First Name</th>
                     <th scope="col">Surname</th>
+                    <th scope="col">Post Code</th>
                     <th scope="col">Country</th>
                     <th scope="col"><strong>Allocation ID</strong><br /> </th>
 <!--                    <th scope="col">First Product Title</th>-->
@@ -208,6 +209,7 @@
                         <th><?= $date = date('d-m-Y', strtotime($order['created_at'])) ?></th>
                         <th><?= $order['deliver_to']['first_name'] ?></th>
                         <th><?= $order['deliver_to']['last_name'] ?></th>
+                        <th><?= $order['deliver_to']['zip'] ?></th>
                         <th><?= $order['deliver_to']['country'] ?></th>
                         <th><?= $allocation['id'] ?></th>
 <!--                        --><?php //foreach ($allocation['line_items'] as $line_item): ?>
