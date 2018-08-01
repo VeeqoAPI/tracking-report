@@ -221,7 +221,11 @@
                         <th><?= $allocation['line_items'][0]['sellable']['price'] ?></th>
                         <th><?= $order['delivery_method']['name'] ?></th>
                         <th><?= $allocation['shipment']['carrier']['name'] ?></th>
-                        <th><?= $allocation['shipment']['tracking_number']['tracking_number'] ?></th>
+                        <th><?php if ($allocation['shipment']['tracking_number']['tracking_number']){
+                                $allocation['shipment']['tracking_number']['tracking_number'];}
+                            elseif ($allocation['shipment']['tracking_number']['delivery_confirmation_number']){
+                                $allocation['shipment']['tracking_number']['delivery_confirmation_number'];}
+                            else { echo ("No Value");} ?></th>
                         <th><?= $date = date('d-m-Y', strtotime($order['shipped_at'])) ?></th>
                     </tr>
                 <?php endforeach; ?>
