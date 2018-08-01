@@ -88,3 +88,7 @@ select {
     padding-right: 0.5rem!important;
 }
 
+.table {
+    max-width: 90%;
+}
+
