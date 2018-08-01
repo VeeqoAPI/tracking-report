@@ -221,7 +221,18 @@
                         <th><?= $allocation['line_items'][0]['sellable']['price'] ?></th>
                         <th><?= $order['delivery_method']['name'] ?></th>
                         <th><?= $allocation['shipment']['carrier']['name'] ?></th>
-                        <th><?= $allocation['shipment']['tracking_number']['tracking_number'] ?></th>
+                        <th><?php if (isset($allocation['shipment']['tracking_number']['tracking_number']))
+                            {
+                                echo ($allocation['shipment']['tracking_number']['tracking_number']);
+                            }
+                            elseif (isset($allocation['shipment']['tracking_number']['delivery_confirmation_number']))
+                            {
+                                echo ($allocation['shipment']['tracking_number']['delivery_confirmation_number']);
+                            }
+                            else
+                            {
+                                echo ("No Value");
+                            }?></th>
                         <th><?= $date = date('d-m-Y', strtotime($order['shipped_at'])) ?></th>
                     </tr>
                 <?php endforeach; ?>
@@ -243,6 +254,8 @@
                 <p>API Reponse Code: <?= $responseCode ?></p>
                 <p>Total Shipped Channel Orders: <?= $headers_arr['X-Total-Count'] ?></p>
                 <p> &copy; Veeqo 2018 Ltd</p>
+
+                <p>Test: <?= (isset($allocation['shipment']['tracking_number']['tracking_number'])) ?></p>
             </div>
         </div>
     </footer>
