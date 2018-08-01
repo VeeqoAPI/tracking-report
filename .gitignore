@@ -21,6 +21,9 @@
 .idea/**/shelf
 .idea/warehouse-stock.iml
 .idea/**/warehouse-stock.iml
+.idea/modules.xml
+.idea/vcs.xml
+
 
 # Sensitive or high-churn files
 .idea/**/dataSources/
