@@ -187,12 +187,12 @@
         <table class="table table-hover table-sm">
             <thead>
                 <tr>
-                    <th scope="col"><strong>Number</strong><br /></th>
+                    <th scope="col"><strong>Number</strong><br /> </th>
                     <th scope="col">Created At Date</th>
-                    <th scope="col"><strong>Deliver to:<br /></strong> First Name</th>
+                    <th scope="col"><strong>Deliver to:</strong><br />First Name</th>
                     <th scope="col">Surname</th>
                     <th scope="col">Country</th>
-                    <th scope="col"><strong>Allocation ID</strong><br /></th>
+                    <th scope="col"><strong>Allocation ID</strong><br /> </th>
 <!--                    <th scope="col">First Product Title</th>-->
                     <th scope="col"><strong>Shipment Details:</strong><br />Delivery Method</th>
                     <th scope="col">Carrier</th>
