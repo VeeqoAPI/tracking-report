@@ -254,8 +254,6 @@
                 <p>API Reponse Code: <?= $responseCode ?></p>
                 <p>Total Shipped Channel Orders: <?= $headers_arr['X-Total-Count'] ?></p>
                 <p> &copy; Veeqo 2018 Ltd</p>
-
-                <p>Test: <?= (isset($allocation['shipment']['tracking_number']['tracking_number'])) ?></p>
             </div>
         </div>
     </footer>
