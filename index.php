@@ -269,9 +269,9 @@
 <?php
 $n = 3;
 echo "<table><tr>";
-for($i=0; $i<count($gallery);$i++){
+for($i=0; $i<count($page_count);$i++){
     $temp = array();
-    $temp = $gallery[$i];
+    $temp = $page_count[$i];
     echo "<td><img src='". $temp->path . "' /></td>";
     if($i % $n ==0 && $i!=0 ){
         echo "</tr><tr>";
