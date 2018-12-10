@@ -173,16 +173,14 @@
                 <?php if($headers_arr['X-Total-Count']>$page_size): ?>
                     <?php $page_count = ceil($headers_arr['X-Total-Count']/$page_size) ?>
                         <nav>
-                            <div id="outer" style="float:left;">
-                                <div id="inner" style="overflow:auto;">
-                                    <ul class="pagination justify-content-center">
-                                        <?php for ($i=1; $i<=$page_count; $i++): ?>
-                                            <li class="page-item <?php if ($i==$page) echo("active"); ?>">
-                                                <input type="submit" name="page" class="page-link" value="<?php echo($i) ?>" />
-                                            </li>
-                                        <?php endfor; ?>
-                                    </ul>
-                                </div>
+                            <div id="inner" style="overflow:auto;">
+                                <ul class="pagination">
+                                    <?php for ($i=1; $i<=$page_count; $i++): ?>
+                                        <li class="page-item <?php if ($i==$page) echo("active"); ?>">
+                                            <input type="submit" name="page" class="page-link" value="<?php echo($i) ?>" />
+                                        </li>
+                                    <?php endfor; ?>
+                                </ul>
                             </div>
                         </nav>
                 <?php endif; ?>
@@ -274,39 +272,7 @@
                 <p> &copy; Veeqo 2018 Ltd</p>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="outer" style="overflow:auto;">
-    <div = id="inner">
-        <ul class="pagination">
-            <?php for ($i=1; $i<=$page_count; $i++): ?>
-                <li class="page-item <?php if ($i==$page) echo("active"); ?>">
-                    <input type="submit" name="page" class="page-link" value="<?php echo($i) ?>"/>
-                </li>
-            <?php endfor; ?>
-        </ul>
-    </div>
-</div>
-
-
-</footer>
-
-
-
-
-
+    </footer>
 </div>
 <!-- /.container -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -315,12 +281,4 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 </body>
 <!--</html>-->
-
-
-
-
-
-
-
-
 </html>
