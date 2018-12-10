@@ -266,18 +266,41 @@
 </body>
 <!--</html>-->
 
-<?php
-$n = 3;
-echo "<table><tr>";
-for($i=0; $i<count($page_count);$i++){
-    $temp = array();
-    $temp = $page_count[$i];
-    echo "<td><img src='". $temp->path . "' /></td>";
-    if($i % $n ==0 && $i!=0 ){
-        echo "</tr><tr>";
-    }
-}
-echo '</tr></table>';
-?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul class="pagination justify-content-center">
+    <?php for ($i=1; $i<=$page_count; $i++): ?>
+
+    <div class="slider">
+        <div class="slide" id="slide-<?php echo $i ?>"></div>
+    </slider>
+
+
+
+        <li class="page-item <?php if ($i==$page) echo("active"); ?>">
+            <input type="submit" name="page" class="page-link" value="<?php echo($i) ?>" />
+        </li>
+    <?php endfor; ?>
+</ul>
+
+
+
+
+
+
+
+
+
 
 </html>
