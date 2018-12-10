@@ -298,7 +298,7 @@
 
     <div class="slider">
         <div class="slide" id="slide-<?php echo $i; ?>"></div>
-    </slider>
+    </div>
 
 
 
