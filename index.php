@@ -270,7 +270,7 @@
                 <p> &copy; Veeqo 2018 Ltd</p>
             </div>
         </div>
-    </footer>
+
 
 
 
@@ -297,7 +297,7 @@
 </div>
 
 
-
+</footer>
 
 
 
