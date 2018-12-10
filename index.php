@@ -292,22 +292,17 @@
 
 
 
-
-<ul class="pagination justify-content-center">
-    <?php for ($i=1; $i<=$page_count; $i++): ?>
-
-    <div class="slider">
-        <div class="slide" id="slide-<?php echo $i; ?>"></div>
+<div id="outter" style="float:left;">
+    <div = id="inner" style="overflow:auto;">
+        <ul class="pagination justify-content-center">
+            <?php for ($i=1; $i<=$page_count; $i++): ?>
+                <li class="page-item <?php if ($i==$page) echo("active"); ?>">
+                    <input type="submit" name="page" class="page-link" value="<?php echo($i) ?>" />
+                </li>
+            <?php endfor; ?>
+        </ul>
     </div>
-
-</ul>
-
-
-      <li>  <li class="page-item <?php if ($i==$page) echo("active"); ?>">
-            <input type="submit" name="page" class="page-link" value="<?php echo($i) ?>" />
-        </li>
-    <?php endfor; ?>
-</ul>
+</div>
 
 
 
