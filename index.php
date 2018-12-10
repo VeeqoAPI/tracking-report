@@ -288,9 +288,9 @@
 
 
 
-<div id="outer" style="float:left;">
-    <div = id="inner" style="overflow:auto;">
-        <ul class="pagination justify-content-center">
+<div id="outer" style="overflow:auto;">
+    <div = id="inner">
+        <ul class="pagination">
             <?php for ($i=1; $i<=$page_count; $i++): ?>
                 <li class="page-item <?php if ($i==$page) echo("active"); ?>">
                     <input type="submit" name="page" class="page-link" value="<?php echo($i) ?>" />
