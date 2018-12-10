@@ -132,6 +132,7 @@
                         <option value="25">25</option>
                         <option value="50">50</option>
                         <option value="100" selected>100</option>
+                        <option value="1000">1000</option>
                     </select>
                 </div>
                 <div class="text-center">
@@ -148,6 +149,7 @@
                             <option value="25" <?php if (isset($page_size) && $page_size==25) echo("selected");?>>25</option>
                             <option value="50" <?php if (isset($page_size) && $page_size==50) echo("selected");?>>50</option>
                             <option value="100" <?php if (isset($page_size) && $page_size==100) echo("selected");?>>100</option>
+                            <option value="1000" <?php if (isset($page_size) && $page_size==1000) echo("selected");?>>1000</option>
                         </select>
                     </div>
                     <input type="hidden"  name="api-key" value="<?php echo $api_key ?>">
