@@ -297,7 +297,7 @@
     <?php for ($i=1; $i<=$page_count; $i++): ?>
 
     <div class="slider">
-        <div class="slide" id="slide-<?php echo $i ?>"></div>
+        <div class="slide" id="slide-<?php echo $i; ?>"></div>
     </slider>
 
 
