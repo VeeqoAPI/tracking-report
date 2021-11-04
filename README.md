@@ -4,8 +4,6 @@ This example shows a basic Tracking Report
 
 If you want to see it in action visit:
 
-https://veeqo-tracking-report.herokuapp.com/
-
 ## Requirements
  
 - PHP >= 5.4
