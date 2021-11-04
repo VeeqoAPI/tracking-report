@@ -2,8 +2,6 @@
 
 This example shows a basic Tracking Report
 
-If you want to see it in action visit:
-
 ## Requirements
  
 - PHP >= 5.4
